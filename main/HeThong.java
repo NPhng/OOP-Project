@@ -18,9 +18,10 @@ public class HeThong {
             System.out.println("\n===[ CHƯƠNG TRÌNH QUẢN LÝ DANH SÁCH VÉ ]===");
             System.out.println("\nHãy chọn menu quản lý");
             System.out.println("\t1) Quản lý Danh sách Vé");
+            System.out.println("\t2) Quản lý địa điểm");
             System.out.println("\t0) Thoát Chương trình");
             
-            System.out.print("Hãy nhập lựa chọn của bạn (0-1): ");
+            System.out.print("Hãy nhập lựa chọn của bạn (0-2): ");
 
             try{
                 String input = sc.nextLine().trim();
@@ -43,6 +44,12 @@ public class HeThong {
                     QLV qlve = new QLV(); 
                     qlve.menuChinh();
                     System.out.println("--- KẾT THÚC QUẢN LÝ VÉ ---");
+                    break;
+                case 2: // Quản lý địa điểm
+                    System.out.println("\n--- BẮT ĐẦU QUẢN LÝ ĐỊA ĐIỂM ---");
+                    QLDD qldd = new QLDD(); 
+                    qldd.menuChinh();
+                    System.out.println("--- KẾT THÚC QUẢN LÝ ĐỊA ĐIỂM ---");
                     break;
                 case 0: // Thoát Chương trình
                     System.out.println("\nĐã thoát khỏi Hệ thống Quản lý Vé. Tạm biệt!");

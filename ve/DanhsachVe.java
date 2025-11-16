@@ -242,7 +242,7 @@ public class DanhsachVe {
         }
     }
 
-   public void nhap(){
+    public void nhap(){
         System.out.print("Nhập số lượng vé: ");
         int sl = 0;
         try {
