@@ -1,8 +1,6 @@
 package main;
 
 import QuanLy.*;
-import QuanLy.QLBV;
-import QuanLy.QLV;
 import java.util.Scanner;
 
 public class HeThong {
