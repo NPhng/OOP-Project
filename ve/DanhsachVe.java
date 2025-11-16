@@ -197,14 +197,14 @@ public class DanhsachVe {
             formatter.format("Số lượng: " + soluongVe + "\n\n");
 
             if (soluongVe > 0){
-                formatter.format("-".repeat(156));
-                formatter.format("\n| %-4s | %-6s | %-7s | %-15s | %-8s | %-8s | %-11s | %-15s | %-7s | %-15s | 15s |\n",
-                                      "STT", "Loại ", "Mã Vé", "Mã Chuyến Bay", "Giá vé", "Mã chỗ", "CMND_CCCD", "Thành phố", "Visa", " Hộ Chiếu ", "Quốc Gia");
-                formatter.format("-".repeat(156) + "\n");
+                formatter.format("-".repeat(147));
+                formatter.format("\n| %-4s | %-8s | %-7s | %-15s | %-8s | %-8s | %-11s | %-15s | %-7s | %-15s | %-15s |\n",
+                                      "STT", "Loại", "Mã Vé", "Mã Chuyến Bay", "Giá vé", "Mã chỗ", "CMND_CCCD", "Thành phố", "Visa", " Hộ Chiếu ", "Quốc Gia");
+                formatter.format("-".repeat(147) + "\n");
 
                 for (int i = 0; i < soluongVe; i++){
                     if (dsVe[i] instanceof Venoidia){
-                        formatter.format("\n| %-4s | %-6s | %-7s | %-15s | %-8s | %-8s | %-11s | %-15s | %-7s | %-15s | 15s |\n",
+                        formatter.format("| %-4s | %-8s | %-7s | %-15s | %-8s | %-8s | %-11s | %-15s | %-7s | %-15s | %-15s |\n",
                                 i+1,
                                 "Venoidia",
                                 dsVe[i].getMave(),
@@ -218,7 +218,7 @@ public class DanhsachVe {
                                 "");
                     }
                     else if (dsVe[i] instanceof Vequocte){
-                        formatter.format("\n| %-4s | %-6s | %-7s | %-15s | %-8s | %-8s | %-11s | %-15s | %-7s | %-15s | 15s |\n",
+                        formatter.format("| %-4s | %-8s | %-7s | %-15s | %-8s | %-8s | %-11s | %-15s | %-7s | %-15s | %-15s |\n",
                                 i+1,
                                 "Vequocte",
                                 dsVe[i].getMave(),
@@ -232,10 +232,10 @@ public class DanhsachVe {
                                 ((Vequocte)dsVe[i]).getQuocgia());
                     }
                 }
-                formatter.format("-".repeat(156));
+                formatter.format("-".repeat(147));
             }
 
-            System.out.println("Đã ghi dữ liệu vào file: DanhSachSanPham.txt");
+            System.out.println("Đã ghi dữ liệu vào file: Danhsachve.txt");
 
         } catch (IOException e) {
             System.err.println("Lỗi I/O: " + e.getMessage());

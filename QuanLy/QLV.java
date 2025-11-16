@@ -18,14 +18,15 @@ public class QLV extends QLBV {
              System.out.println("=================================");
              System.out.println("1. Nhập danh sách vé (thêm nhiều)");
              System.out.println("2. Thêm 1 vé mới");
-             System.out.println("3. Xem/Xuất danh sách vé");
-             System.out.println("4. Sửa thông tin vé theo mã");
-             System.out.println("5. Xóa vé theo mã");
-             System.out.println("6. Tìm kiếm vé theo mã");
-             System.out.println("7. Tìm kiếm vé theo giá tối thiểu");
-             System.out.println("8. Tìm kiếm vé theo Mã chuyến bay");
-             System.out.println("9. Tìm kiếm vé theo Mã chỗ");
-             System.out.println("10. Thống kê tổng số lượng và doanh thu");
+             System.out.println("3. Xuất danh sách vé ra màn hình");
+             System.out.println("4. Xuất danh sách vé ra file");
+             System.out.println("5. Sửa thông tin vé theo mã");
+             System.out.println("6. Xóa vé theo mã");
+             System.out.println("7. Tìm kiếm vé theo mã");
+             System.out.println("8. Tìm kiếm vé theo giá tối thiểu");
+             System.out.println("9. Tìm kiếm vé theo Mã chuyến bay");
+             System.out.println("10. Tìm kiếm vé theo Mã chỗ");
+             System.out.println("11. Thống kê tổng số lượng và doanh thu");
              System.out.println("0. Thoát chương trình (Tự động lưu)");
              System.out.print("Nhập lựa chọn của bạn: ");
             
@@ -49,24 +50,27 @@ public class QLV extends QLBV {
                 ds_Ve.xuat();
                 break;
             case 4:
-                ds_Ve.suaVe(); 
+                ds_Ve.ghiFile(); 
                 break;
             case 5:
-                ds_Ve.xoaVe(); 
+                ds_Ve.suaVe(); 
                 break;
             case 6:
-                ds_Ve.timKiemTheoMa(); 
+                ds_Ve.xoaVe(); 
                 break;
             case 7:
-                ds_Ve.timKiemTheoGia(); 
+                ds_Ve.timKiemTheoMa(); 
                 break;
             case 8:
-                ds_Ve.timKiemTheoMaChuyenBay(); 
+                ds_Ve.timKiemTheoGia(); 
                 break;
             case 9:
-                ds_Ve.timKiemTheoMaCho(); 
+                ds_Ve.timKiemTheoMaChuyenBay(); 
                 break;
             case 10:
+                ds_Ve.timKiemTheoMaCho(); 
+                break;
+            case 11:
                 ds_Ve.thongKe(); 
                 break;
             case 0:
