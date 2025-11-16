@@ -4,6 +4,8 @@ package ve;
 import java.util.Scanner;
 
 public class Venoidia extends Ve{
+    Scanner sc =new Scanner(System.in);
+    
     private String cmnd_cccd;
     private String thanhpho;
 
@@ -52,7 +54,6 @@ public class Venoidia extends Ve{
     public void nhap()
     {
         super.nhap();
-        Scanner sc =new Scanner(System.in);
         System.out.print("\t CMND/CCCD : "); this.cmnd_cccd = sc.nextLine();
         System.out.print("\t Thanh Pho : "); this.thanhpho = sc.nextLine();
     }

@@ -1,19 +1,13 @@
 package QuanLy;
 
 import java.util.Scanner;
-import ve.DanhsachVe;
 
 public class QLV extends QLBV {
-    
-    // Constructor gọi super() để khởi tạo ds_Ve và đọc file
-    public QLV() {
-        super(); 
-    }
+    Scanner sc =new Scanner(System.in);
 
     // Ghi đè phương thức menuChinh từ QLBV
     @Override
     public void menuChinh() {
-    	Scanner sc = new Scanner(System.in);
         // ds_Ve đã được khởi tạo và đọc file trong constructor của QLBV
         
         int luaChon;
@@ -49,10 +43,10 @@ public class QLV extends QLBV {
                 ds_Ve.nhap(); 
                 break;
             case 2:
-                ds_Ve.themVe(); 
+                ds_Ve.them(); 
                 break;
             case 3:
-                ds_Ve.xuatDanhSach();
+                ds_Ve.xuat();
                 break;
             case 4:
                 ds_Ve.suaVe(); 
@@ -61,7 +55,7 @@ public class QLV extends QLBV {
                 ds_Ve.xoaVe(); 
                 break;
             case 6:
-                ds_Ve.timKiemVe(); 
+                ds_Ve.timKiemTheoMa(); 
                 break;
             case 7:
                 ds_Ve.timKiemTheoGia(); 

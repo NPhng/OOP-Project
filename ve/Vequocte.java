@@ -3,6 +3,8 @@ package ve;
 import java.util.Scanner;
 
 public class Vequocte extends Ve{
+    Scanner sc =new Scanner(System.in);
+    
     private String visa;
     private String hochieu;
     private String quocgia;
@@ -56,7 +58,6 @@ public class Vequocte extends Ve{
     @Override
     public void nhap(){
         super.nhap();
-        Scanner sc = new Scanner(System.in);
         System.out.print("\t Visa : "); this.visa = sc.nextLine();
         System.out.print("\t Ho Chieu : "); this.hochieu = sc.nextLine();
         System.out.print("\t Quoc Gia : "); this.quocgia = sc.nextLine();

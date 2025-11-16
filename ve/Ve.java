@@ -3,6 +3,8 @@ package ve;
 import java.util.Scanner;
 
 public class Ve {
+    Scanner sc = new Scanner(System.in);
+    
     // Thuộc tính trung tâm
     private String mave;
     private String macb;
@@ -49,7 +51,7 @@ public class Ve {
         this.macb = macb;
     }
 
-    public double getGiave(){
+    public int getGiave(){
         return giave;
     }
     public void setGiave(int giave){
@@ -66,7 +68,6 @@ public class Ve {
 
    public void nhap()
 {
-    Scanner sc = new Scanner(System.in);
     System.out.print("\t - Ma ve : "); this.mave = sc.nextLine();
     System.out.print("\t - Ma chuyen bay : "); this.macb = sc.nextLine();
     System.out.print("\t - Gia ve : "); this.giave = sc.nextInt();sc.nextLine();
@@ -80,7 +81,7 @@ public class Ve {
     System.out.println("\t=========================================");
     System.out.printf("\t| %-20s : %-15s |\n", "Mã Vé", this.mave);
     System.out.printf("\t| %-20s : %-15s |\n", "Mã Chuyến Bay", this.macb);
-    System.out.printf("\t| %-20s : %-15.0f |\n", "Giá Vé", this.giave); 
+    System.out.printf("\t| %-20s : %-15d |\n", "Giá Vé", this.giave); 
     System.out.printf("\t| %-20s : %-15s |\n", "Mã Chỗ", this.macho);
     System.out.println("\t=========================================");
 }

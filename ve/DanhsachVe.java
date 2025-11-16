@@ -8,11 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Formatter;
-import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class DanhsachVe {
@@ -255,8 +252,8 @@ public class DanhsachVe {
             return;
         }
         
-        // Khởi tạo một danh sách tạm thời để lưu các vé hợp lệ
-        List<Ve> veList = new ArrayList<>();
+        soluongVe = 0;
+        dsVe = new Ve[0];
 
         for (int i = 0; i < sl; i++) {
             System.out.println("\nNhập thông tin vé thứ " + (i + 1) + ":");
@@ -293,14 +290,8 @@ public class DanhsachVe {
                 }
             }
             
-            // Thêm vé hợp lệ vào danh sách tạm thời
-            veList.add(ve);
+            themVe(ve);
         }
-        
-        // Cập nhật mảng dsVe và soluongVe
-        // ghi đè danh sách cũ khi gọi nhap()
-        this.soluongVe = veList.size();
-        this.dsVe = veList.toArray(new Ve[0]);
     }
 
     // Hàm xuat() đã được khôi phục về logic ban đầu
@@ -423,7 +414,7 @@ public class DanhsachVe {
         Ve veHienTai = dsVe[viTri];
         
         System.out.println("--- SỬA THÔNG TIN VÉ CÓ MÃ: " + maVeCanSua + " ---");
-        System.out.println("Lưu ý: Bạn không thể sửa **Mã Vé**.");
+        System.out.println("Lưu ý: Bạn không thể sửa Mã Vé.");
 
         try {
             System.out.printf("\t - Mã chuyến bay (Hiện tại: %s, Nhập mới hoặc Enter để giữ nguyên): ", veHienTai.getMacb());
@@ -537,13 +528,14 @@ public class DanhsachVe {
 
     // 2. Tìm kiếm theo Giá Vé (có tham số)
     public Ve[] timKiemTheoGia(int giaMin, int giaMax) {
-        List<Ve> ketQuaList = new ArrayList<>();
+        Ve[] ketQua = new Ve[0];
         for (Ve ve : dsVe) {
             if (ve.getGiave() >= giaMin && ve.getGiave() <= giaMax) {
-                ketQuaList.add(ve);
+                ketQua = Arrays.copyOf(ketQua, ketQua.length+1);
+                ketQua[ketQua.length - 1] = ve;
             }
         }
-        return ketQuaList.toArray(new Ve[0]);
+        return ketQua;
     }
 
     // 2. Tìm kiếm theo Giá Vé (không tham số) - Dùng xuat()
@@ -579,13 +571,14 @@ public class DanhsachVe {
     
     // 3. Tìm kiếm theo Mã Chỗ (có tham số)
     public Ve[] timKiemTheoMaCho(String maCho) {
-        List<Ve> ketQuaList = new ArrayList<>();
+        Ve[] ketQua = new Ve[0];
         for (Ve ve : dsVe) {
             if (ve.getMacho().equalsIgnoreCase(maCho)) {
-                ketQuaList.add(ve);
+                ketQua = Arrays.copyOf(ketQua, ketQua.length+1);
+                ketQua[ketQua.length - 1] = ve;
             }
         }
-        return ketQuaList.toArray(new Ve[0]);
+        return ketQua;
     }
 
     // 3. Tìm kiếm theo Mã Chỗ (không tham số) - Dùng xuat()
@@ -608,13 +601,14 @@ public class DanhsachVe {
     
     // 4. Tìm kiếm theo Mã Chuyến Bay (có tham số)
     public Ve[] timKiemTheoMaChuyenBay(String maCB) {
-        List<Ve> ketQuaList = new ArrayList<>();
+        Ve[] ketQua = new Ve[0];
         for (Ve ve : dsVe) {
             if (ve.getMacb().equalsIgnoreCase(maCB)) {
-                ketQuaList.add(ve);
+                ketQua = Arrays.copyOf(ketQua, ketQua.length+1);
+                ketQua[ketQua.length - 1] = ve;
             }
         }
-        return ketQuaList.toArray(new Ve[0]);
+        return ketQua;
     }
 
     // 4. Tìm kiếm theo Mã Chuyến Bay (không tham số) - Dùng xuat()
